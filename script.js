@@ -25,36 +25,39 @@ function prevCard() {
 function toggleMode() {
   const body = document.body;
   const icon = document.getElementById('modeIcon');
-  
-  // Toggle between dark-mode and light-mode
-  const isDark = body.classList.toggle('light-mode');
-  
-  // Change the icon to reflect the current mode
-  icon.classList.remove(isDark ? 'bi-moon-fill' : 'bi-sun-fill');
-  icon.classList.add(isDark ? 'bi-sun-fill' : 'bi-moon-fill');
 
-  // Save the theme preference in localStorage
-  if (isDark) {
-    localStorage.setItem('theme', 'dark');
-  } else {
+  // Toggle the light-mode class; if present, we're in light mode
+  const isLight = body.classList.toggle('light-mode');
+
+  if (isLight) {
+    // Light mode: set icon to sun and store theme as light
+    icon.classList.remove('bi-moon-fill');
+    icon.classList.add('bi-sun-fill');
     localStorage.setItem('theme', 'light');
+  } else {
+    // Dark mode: remove light-mode, set icon to moon and store theme as dark
+    icon.classList.remove('bi-sun-fill');
+    icon.classList.add('bi-moon-fill');
+    localStorage.setItem('theme', 'dark');
   }
 }
 
-// On page load, check if dark mode was previously saved in localStorage
+// On page load, check the stored preference and set the theme accordingly
 window.onload = () => {
-  // If dark mode was saved previously in localStorage, apply it
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    document.getElementById('modeIcon').classList.remove('bi-moon-fill');
-    document.getElementById('modeIcon').classList.add('bi-sun-fill');
+  const storedTheme = localStorage.getItem('theme');
+  const icon = document.getElementById('modeIcon');
+
+  if (storedTheme === 'light') {
+    document.body.classList.add('light-mode');
+    icon.classList.remove('bi-moon-fill');
+    icon.classList.add('bi-sun-fill');
   } else {
-    // If no preference is stored, default to dark mode
-    document.body.classList.add('dark-mode');
-    document.getElementById('modeIcon').classList.remove('bi-moon-fill');
-    document.getElementById('modeIcon').classList.add('bi-sun-fill');
+    // Default to dark mode
+    document.body.classList.remove('light-mode');
+    icon.classList.remove('bi-sun-fill');
+    icon.classList.add('bi-moon-fill');
   }
-}
+};
 
 // Contact form submission handling with fade out for success message
 const contactForm = document.getElementById("contactForm");
