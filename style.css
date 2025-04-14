@@ -197,8 +197,7 @@ body {
   display: block;
 }
 
-/* ========== Light Mode Overrides ============= */
-/* ============================================= */
+/* Light Mode Overrides */
 body.light-mode {
   background: linear-gradient(to right, #f9f9f9, #c0c0c4) ;
   color: #111 !important;
