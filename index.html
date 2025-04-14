@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marc Gallacher</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Marc Gallacher</a>
+  
+      <div class="d-flex align-items-center order-lg-1">
+        <div class="form-check form-switch d-flex align-items-center text-white ms-3">
+          <input class="form-check-input" type="checkbox" id="modeToggle" onchange="toggleMode()">
+          <label class="form-check-label ms-2" for="modeToggle">
+            <i id="modeIcon" class="bi bi-moon-fill"></i>
+          </label>
+        </div>
+      </div>
+  
+      <!-- Hamburger toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Collapsible menu -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <section class="hero py-5" id="home">
+    <div class="container text-center" data-aos="fade-up">
+      <!-- Name & Tagline -->
+      <h1 class="display-3 fw-bold text-white">Marc Gallacher</h1>
+      <p class="lead text-light mb-2">
+        Fourth year Computer Science student at the University of Strathclyde
+      </p>
+  
+      <!-- Welcome + About Me -->
+      <p class="text-light mb-4" style="max-width: 700px; margin: 0 auto;">
+        Welcome to my website — I'm a student passionate about technology, coding, and building web apps. Have a look at some of my projects below!
+      </p>
+  
+      <!-- ↓ Arrow -->
+      <div class="scroll-down mb-5">↓</div>
+    </div>
+  
+    <!-- Carousel wrapper (outside container for better centering) -->
+    <div class="project-carousel" id = "projects">
+  
+      <!-- Left Arrow -->
+      <button class="carousel-arrow left" onclick="prevCard()">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+  
+      <div class = "carousel-inner-wrapper">
+        <div class="project-track">
+          <!-- CARD 1 -->
+          <div class="project-card-container active">
+            <div class="project-card p-4 rounded feature-project text-center mx-auto" style="max-width: 800px;">
+              <!-- Image + Gallery Icon -->
+              <div class="project-image-wrapper position-relative mb-4">
+                <img src="images/Game-Screenshot-main.png" 
+                    alt="Coding Game Screenshot" 
+                    class="img-fluid rounded" />
+            
+                <!-- Gallery Icon -->
+                <div class="gallery-trigger" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#galleryModal" 
+                    title="View Gallery">
+                  <i class="bi bi-images"></i>
+                </div>
+              </div>
+        
+              <h3 class="text-white">Coding for Kids</h3>
+        
+              <p class="text-muted">
+                A story-driven educational game designed to teach programming to P6–S2 students using Blockly and Python.
+                Includes interactive challenges with real-time feedback and an exciting adventure storyline!
+              </p>
+              <p class="text-muted">
+                <strong>Tested in a school classroom</strong>: The game was proven to boost student engagement, motivation, and test results compared to traditional materials.
+              </p>
+        
+              <a href="https://marcgallacher.pythonanywhere.com" target="_blank" class="btn btn-outline-light mt-2">
+                Play the Game!
+              </a>
+            </div>
+          </div>
+    
+          <!-- CARD 2: MindCraft App -->
+          <div class="project-card-container">
+            <div class="project-card p-4 rounded feature-project text-center mx-auto" style="max-width: 800px;">
+
+              <!-- Image + Gallery Icon -->
+              <div class="project-image-wrapper position-relative mb-4">
+                <img src="images/MindCraft1.png" 
+                    alt="MindCraft Screenshot" 
+                    class="img-fluid rounded mindcraft-screenshot" />
+
+                <!-- Gallery Icon -->
+                <div class="gallery-trigger" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#mindcraftGallery" 
+                    title="View Gallery">
+                  <i class="bi bi-images"></i>
+                </div>
+              </div>
+
+              <h3 class="text-white">MindCraft</h3>
+
+              <p class="text-muted">
+                A mental wellbeing app designed to help users track their mood, reduce stress, and build healthier habits.
+                Built with a simple and calming interface to support self-reflection and personal growth.
+              </p>
+
+              <p class="text-muted">
+                Designed for mobile devices using HTML, CSS, and JavaScript. Optimised for mental clarity
+              </p>
+
+            </div>
+          </div>
+    
+        </div>
+      </div>
+
+  
+      <!-- Right Arrow -->
+      <button class="carousel-arrow right" onclick="nextCard()">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section py-5">
+    <div class="container text-center text-white" data-aos="fade-up" style="max-width: 800px;">
+      <h2 class="mb-4">About Me</h2>
+      <p class="mb-4">
+        I’m a final-year Computer Science student at the University of Strathclyde with a strong passion for technology and software development. Over the course of my degree, I’ve gained solid experience in Python, JavaScript, HTML, CSS, PHP, SQL, and data modelling — with a focus on both web and mobile application development.
+      </p>
+      <p class="mb-4">
+        I’m a friendly, confident, and outgoing individual who thrives in collaborative environments. Through various university projects, I’ve strengthened my teamwork, communication, and time management skills — consistently meeting deadlines and delivering high-quality work under pressure. I’m always eager to learn new technologies and continue growing both technically and professionally.
+      </p>
+      <p class="mb-4">
+        Outside of academics, I spent a summer working at a US summer camp through Camp America, where I developed leadership and adaptability in a fast-paced, challenging environment.
+      </p>
+      <p class="mb-4">
+        I’m currently looking for exciting opportunities where I can contribute, learn, and continue to grow in the software development space.
+      </p>
+      <a href="assets/Marc_Gallacher_CV.pdf" target="_blank" class="btn btn-outline-light">
+        View My CV
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section py-5">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 class="mb-4 text-white">Get in Touch</h2>
+      <p class="mb-4 text-muted">Feel free to reach out via the form or directly:</p>
+
+      <ul class="list-unstyled mb-4 text-white">
+        <li class="mb-2">
+          <i class="bi bi-envelope-fill me-2"></i>
+          <strong>Email:</strong>
+          <a href="mailto:marc.gallacher10@gmail.com" class="text-white">
+            marc.gallacher10@gmail.com
+          </a>
+        </li>
+        <li class="mb-2">
+          <i class="bi bi-linkedin me-2"></i>
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/marcgallacher/" target="_blank" class="text-white">
+            https://www.linkedin.com/in/marcgallacher/
+          </a>
+        </li>
+        <li class="mb-2">
+          <i class="bi bi-github me-2"></i>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/marcgallacher1/marcgallacher1.github.io" target="_blank" class="text-white">
+            https://github.com/marcgallacher1/marcgallacher1.github.io
+          </a>
+        </li>
+      </ul>
+      
+      <!-- Modified contact form with id="contactForm" and no action attribute -->
+      <form id="contactForm" method="POST" class="mx-auto" style="max-width: 600px;">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" class="form-control mb-3" name="name" id="name" placeholder="Your Name" required />
+        <input type="email" class="form-control mb-3" name="email" id="email" placeholder="Your Email" required />
+        <textarea class="form-control mb-3" name="message" id="message" placeholder="Your Message" style="height: 150px;" required></textarea>
+        <button type="submit" class="btn btn-outline-light">Send Message</button>
+      </form>
+      
+      <!-- Success message element -->
+      <div id="formStatus" style="display: none; margin-top: 10px; color: limegreen; font-weight: 600;">
+        Your message has been sent!
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+
+
+  <!-- Modal Gallery -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="galleryModalLabel">Coding for Kids Gallery</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/Game-Screenshot-main.png" class="img-fluid mb-3 rounded" alt="Screenshot 1" />
+          <img src="images/Level Screen-unlocked.png" class="img-fluid mb-3 rounded" alt="Screenshot 2" />
+          <img src="images/Game-Screenshot-two.png" class="img-fluid mb-3 rounded" alt="Screenshot 3" />
+          <img src="images/Game Blocks.png" class="img-fluid mb-3 rounded" alt="Screenshot 4" />
+          <img src="images/Finish-Lesson.png" class="img-fluid mb-3 rounded" alt="Screenshot 5" />
+          <img src="images/Quiz Lobby.png" class="img-fluid mb-3 rounded" alt="Screenshot 6" />
+          <img src="images/Quiz-Opening.png" class="img-fluid mb-3 rounded" alt="Screenshot 7" />
+          <img src="images/Quiz Blocks.png" class="img-fluid mb-3 rounded" alt="Screenshot 7" />
+          <img src="images/Quiz-Finish.png" class="img-fluid mb-3 rounded" alt="Screenshot 7" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="mindcraftGallery" tabindex="-1" aria-labelledby="mindcraftGalleryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="mindcraftGalleryLabel">MindCraft Gallery</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="images/MindCraft1.png" class="img-fluid mb-3 rounded mindcraft-modal-img" alt="MindCraft Screenshot 1" />
+          <img src="images/MindCraft2.png" class="img-fluid mb-3 rounded mindcraft-modal-img" alt="MindCraft Screenshot 2" />
+          <img src="images/MindCraft3.png" class="img-fluid mb-3 rounded mindcraft-modal-img" alt="MindCraft Screenshot 3" />
+          <img src="images/MindCraft4.png" class="img-fluid mb-3 rounded mindcraft-modal-img" alt="MindCraft Screenshot 4" />
+          <img src="images/MindCraft5.png" class="img-fluid mb-3 rounded mindcraft-modal-img" alt="MindCraft Screenshot 5" />
+          <img src="images/MindCraft6.png" class="img-fluid mb-3 rounded mindcraft-modal-img" alt="MindCraft Screenshot 6" />
+          <img src="images/MindCraft7.png" class="img-fluid mb-3 rounded mindcraft-modal-img" alt="MindCraft Screenshot 7" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
