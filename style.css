@@ -248,6 +248,15 @@ body.light-mode .contact-section p,
 body.light-mode .contact-section a {
   color: #111 !important;
 }
+
+body.light-mode .project-card a:hover {
+  color: white !important;
+}
+
+body.light-mode .about-section a:hover {
+  color: white !important;
+}
+
 body.light-mode .contact-section .form-control {
   background-color: white;
   border: 1px solid #ccc;
