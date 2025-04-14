@@ -265,6 +265,10 @@ body.light-mode .about-section a:hover {
   color: white !important;
 }
 
+body.light-mode .hero a:hover {
+  color: white !important;
+}
+
 body.light-mode .contact-section .form-control {
   background-color: white;
   border: 1px solid #ccc;
