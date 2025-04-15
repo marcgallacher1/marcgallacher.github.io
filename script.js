@@ -42,20 +42,22 @@ function toggleMode() {
   }
 }
 
-// On page load, check the stored preference and set the theme accordingly
+// On page load, check the stored preference and set the theme accordingly.
+// If no stored preference, default to light mode.
 window.onload = () => {
   const storedTheme = localStorage.getItem('theme');
   const icon = document.getElementById('modeIcon');
 
-  if (storedTheme === 'light') {
+  if (!storedTheme || storedTheme === 'light') {
     document.body.classList.add('light-mode');
     icon.classList.remove('bi-moon-fill');
     icon.classList.add('bi-sun-fill');
+    localStorage.setItem('theme', 'light');
   } else {
-    // Default to dark mode
     document.body.classList.remove('light-mode');
     icon.classList.remove('bi-sun-fill');
     icon.classList.add('bi-moon-fill');
+    localStorage.setItem('theme', 'dark');
   }
 };
 
