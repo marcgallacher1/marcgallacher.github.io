@@ -44,6 +44,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 1rem 1.5rem;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  border: 1px solid rgb(248, 245, 249);
 }
 .project-card:hover {
   transform: translateY(-2px);
@@ -142,13 +143,14 @@ body {
   display: none;
   justify-content: center;
 }
+
 .project-card-container.active {
   display: flex;
 }
 /* Carousel Arrow */
 .carousel-arrow {
   background: linear-gradient(145deg, #5050a8, black) !important; /* brighter metallic blue */
-  border: none;
+  border: 1px solid rgb(248, 245, 249);
   color: white !important;
   padding: 10px 15px;
   border-radius: 12px; /* slight roundness for a modern feel */
@@ -218,10 +220,10 @@ body.light-mode .scroll-down {
 
 /* Project Cards in Light Mode */
 body.light-mode .project-card {
-  background: linear-gradient(to right, #f9f9f9, #dedee2) !important;
-  border: 1px solid rgba(111, 102, 102, 0.267);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  background: linear-gradient(to right, #f9f9f9, #ccccd1) !important;
+  border: 1px solid;
 }
+
 body.light-mode .project-card h3,
 body.light-mode .project-card p {
   color: #222 !important;
@@ -251,8 +253,8 @@ body.light-mode .gallery-trigger:hover {
 
 /* Carousel Arrow */
 body.light-mode .carousel-arrow {
-  background: linear-gradient(145deg, #0a0a0ae3, #4c4d51) !important; /* brighter metallic blue */
-  border: none;
+  background: linear-gradient(145deg, #cbcacae3, #4c4d51) !important; /* brighter metallic blue */
+  border: 1px solid rgb(11, 11, 11);
   color: white !important;
   padding: 10px 15px;
   border-radius: 12px; /* slight roundness for a modern feel */
@@ -263,7 +265,7 @@ body.light-mode .carousel-arrow {
 }
 
 body.light-mode .carousel-arrow:hover {
-  background: linear-gradient(145deg, #0a0a0ae3, #8b8d97) !important;
+  background: linear-gradient(145deg, #cbcacae3, #707278) !important;
 }
 
 /* Buttons in Light Mode */
