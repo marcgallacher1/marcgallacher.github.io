@@ -1,32 +1,7 @@
-// Init scroll animations
-AOS.init();
-
-let currentCard = 0;
-
-function showCard(index) {
-  const cards = document.querySelectorAll('.project-card-container');
-  cards.forEach((card, i) => {
-    card.classList.toggle('active', i === index);
-  });
-}
-
-function nextCard() {
-  const cards = document.querySelectorAll('.project-card-container');
-  currentCard = (currentCard + 1) % cards.length;
-  showCard(currentCard);
-}
-
-function prevCard() {
-  const cards = document.querySelectorAll('.project-card-container');
-  currentCard = (currentCard - 1 + cards.length) % cards.length;
-  showCard(currentCard);
-}
-
 function toggleMode() {
   const body = document.body;
   const icon = document.getElementById('modeIcon');
 
-  // Toggle the light-mode class; if present, we're in light mode
   const isLight = body.classList.toggle('light-mode');
 
   if (isLight) {
@@ -42,7 +17,7 @@ function toggleMode() {
   }
 }
 
-// On page load, check the stored preference and set the theme accordingly.
+// On page load, check the stored preference
 // If no stored preference, default to light mode.
 window.onload = () => {
   const storedTheme = localStorage.getItem('theme');
