@@ -59,6 +59,20 @@ body {
   line-height: 1.6;
 }
 
+/* ----- MindCraft modal screenshot sizing ----- */
+.mindcraft-modal-img {
+  max-height: 80vh;      /* no taller than 80 % of the viewport */
+  width: auto;           /* keep aspect ratio */
+  object-fit: contain;   /* never crop */
+  margin: 0 auto;
+  display: block;
+}
+
+/* Optional: a bit smaller on very small phones */
+@media (max-width: 576px) {
+  .mindcraft-modal-img { max-height: 70vh; }
+}
+
 /* Contact Section */
 .contact-section {
   background: linear-gradient(to right, #161515, #252558);
@@ -125,15 +139,7 @@ body {
   color: #5c82f2 !important;
 }
 
-/* CAROUSEL & RELATED */
-.project-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: 1rem;
-  padding: 0 2rem;
-}
+
 .project-track {
   display: flex;
   transition: transform 0.5s ease;
@@ -147,60 +153,7 @@ body {
 .project-card-container.active {
   display: flex;
 }
-/* Carousel Arrow */
-.carousel-arrow {
-  background: linear-gradient(145deg, #5050a8, black) !important; /* brighter metallic blue */
-  border: 1px solid rgba(248, 245, 249, 0.43);
-  color: white !important;
-  padding: 10px 15px;
-  border-radius: 12px; /* slight roundness for a modern feel */
-  font-size: 1.5rem;
-  z-index: 10;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
 
-.carousel-arrow:hover {
-  background: linear-gradient(145deg, #5050a8, #0b0b48) !important;
-}
-
-.carousel-arrow.left {
-  position: absolute;
-  left: -90px;
-}
-.carousel-arrow.right {
-  position: absolute;
-  right: -90px;
-}
-@media (max-width: 768px) {
-  .carousel-arrow.left {
-    left: -30px;
-  }
-  .carousel-arrow.right {
-    right: -30px;
-  }
-}
-.carousel-inner-wrapper {
-  max-width: 850px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-/* MindCraft Specific Images */
-.mindcraft-screenshot {
-  max-height: 500px;
-  width: auto;
-  object-fit: contain;
-}
-.mindcraft-modal-img {
-  max-height: 80vh; /* caps image height to 80% of viewport */
-  width: auto;
-  object-fit: contain;
-  margin: 0 auto;
-  display: block;
-}
 
 /* Light Mode Overrides */
 body.light-mode {
@@ -251,22 +204,6 @@ body.light-mode .gallery-trigger:hover {
   color: #5c82f2 !important;
 }
 
-/* Carousel Arrow */
-body.light-mode .carousel-arrow {
-  background: linear-gradient(145deg, #cbcacae3, #4c4d51) !important; /* brighter metallic blue */
-  border: 1px solid rgb(11, 11, 11);
-  color: white !important;
-  padding: 10px 15px;
-  border-radius: 12px; /* slight roundness for a modern feel */
-  font-size: 1.5rem;
-  z-index: 10;
-  cursor: pointer;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.light-mode .carousel-arrow:hover {
-  background: linear-gradient(145deg, #cbcacae3, #707278) !important;
-}
 
 /* Buttons in Light Mode */
 body.light-mode .btn-outline-light {
